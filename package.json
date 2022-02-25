@@ -11,6 +11,10 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.0.0",
+    "husky": "^7.0.4",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "lint-staged": "^12.3.4"
   }
 }
