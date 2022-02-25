@@ -21,6 +21,7 @@
     "lint-staged": "^12.3.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:staged": "jest"
   }
 }
