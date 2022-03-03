@@ -21,6 +21,7 @@
   "dependencies": {},
   "scripts": {
     "test": "jest --passWithNoTests",
+    "test-production": "jest --passWithNoTests --watch",
     "test:staged": "jest --passWithNoTests",
     "prepare": "husky install"
   }
