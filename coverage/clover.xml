@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1646350880810" clover="3.2.0">
-  <project timestamp="1646350880810" name="All files">
-    <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="25" coveredelements="25" complexity="0" loc="19" ncloc="19" packages="2" files="3" classes="3"/>
+<coverage generated="1646415384388" clover="3.2.0">
+  <project timestamp="1646415384388" name="All files">
+    <metrics statements="19" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="23" coveredelements="20" complexity="0" loc="19" ncloc="19" packages="3" files="3" classes="3"/>
     <package name="controllers">
       <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="signup.ts" path="D:\projetos_node\clean-node-api\src\presentation\controllers\signup.ts">
@@ -22,18 +22,21 @@
       </file>
     </package>
     <package name="errors">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="invalidParamError.ts" path="D:\projetos_node\clean-node-api\src\presentation\errors\invalidParamError.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="D:\projetos_node\clean-node-api\src\presentation\errors\index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="missing-param-error.ts" path="D:\projetos_node\clean-node-api\src\presentation\errors\missing-param-error.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
+    </package>
+    <package name="protocols">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="D:\projetos_node\clean-node-api\src\presentation\protocols\index.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
       </file>
     </package>
   </project>
