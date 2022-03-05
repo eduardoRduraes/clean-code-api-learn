@@ -1,2 +1,1 @@
-{"D:\\projetos_node\\clean-node-api\\src\\utils\\email-validator.ts": {"path":"D:\\projetos_node\\clean-node-api\\src\\utils\\email-validator.ts","statementMap":{"0":{"start":{"line":2,"column":0},"end":{"line":2,"column":33}},"1":{"start":{"line":5,"column":4},"end":{"line":5,"column":null}},"2":{"start":{"line":3,"column":0},"end":{"line":3,"column":13}}},"fnMap":{"0":{"name":"(anonymous_1)","decl":{"start":{"line":4,"column":2},"end":{"line":4,"column":9}},"loc":{"start":{"line":4,"column":24},"end":{"line":6,"column":3}}}},"branchMap":{},"s":{"0":1,"1":3,"2":1},"f":{"0":3},"b":{}}
-}
+{}
