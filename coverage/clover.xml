@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1646437083153" clover="3.2.0">
-  <project timestamp="1646437083153" name="All files">
-    <metrics statements="42" coveredstatements="36" conditionals="3" coveredconditionals="3" methods="8" coveredmethods="8" elements="53" coveredelements="47" complexity="0" loc="42" ncloc="42" packages="4" files="8" classes="8"/>
-    <package name="controllers.signup">
+<coverage generated="1646440451117" clover="3.2.0">
+  <project timestamp="1646440451117" name="All files">
+    <metrics statements="44" coveredstatements="38" conditionals="3" coveredconditionals="3" methods="9" coveredmethods="9" elements="56" coveredelements="50" complexity="0" loc="44" ncloc="44" packages="5" files="9" classes="9"/>
+    <package name="presentation.controllers.signup">
       <metrics statements="24" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="signup-protocols.ts" path="D:\projetos_node\clean-node-api\src\presentation\controllers\signup\signup-protocols.ts">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -35,7 +35,7 @@
         <line num="42" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="errors">
+    <package name="presentation.errors">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="D:\projetos_node\clean-node-api\src\presentation\errors\index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -62,7 +62,7 @@
         <line num="4" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="helpers">
+    <package name="presentation.helpers">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="http-helper.ts" path="D:\projetos_node\clean-node-api\src\presentation\helpers\http-helper.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -72,12 +72,20 @@
         <line num="14" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="protocols">
+    <package name="presentation.protocols">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="D:\projetos_node\clean-node-api\src\presentation\protocols\index.ts">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="email-validator.ts" path="D:\projetos_node\clean-node-api\src\utils\email-validator.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
   </project>
