@@ -1,8 +1,12 @@
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account'
 
+interface AccountMongoRepositoryStub {
+  sut: AccountMongoRepository
+}
+
 describe('Account Mongo Repository', ()=>{
-  const makeSut = () =>{
+  const makeSut = ():AccountMongoRepositoryStub =>{
     const sut = new AccountMongoRepository()
     return {sut}
   }

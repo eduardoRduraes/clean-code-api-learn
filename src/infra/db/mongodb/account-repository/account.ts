@@ -7,9 +7,10 @@ import { MongoHelper } from '../helpers/mongo-helper'
   async add(accountData: AddAccountModel): Promise<AccountModel> {
     const accountCollection = MongoHelper.getCollection('accounts')
     const result = await accountCollection.insertOne(accountData)
-    const {_id: id, name, email, password } = await accountCollection.findOne(result.insertedId)
-    // Object.assign({}, accountWithoutId, { id: _id.toString() })
-    return {id:id.toString(), name, email, password }
+    const account = await accountCollection.findOne(result.insertedId)
+    const {_id, ...accountWithoutId } = account
+    const { id, name, email, password }  = Object.assign({}, accountWithoutId, { id: _id.toString() })
+    return {id,name,email,password}
   }
 
 }
