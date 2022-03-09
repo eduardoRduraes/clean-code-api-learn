@@ -1,4 +1,5 @@
 import { MongoHelper } from '../helpers/mongo-helper'
+import { AccountMongoRepository } from './account'
 
 describe('Account Mongo Repository', ()=>{
   const makeSut = () =>{
@@ -21,7 +22,7 @@ describe('Account Mongo Repository', ()=>{
     const { sut } = makeSut()
     const account = await sut.add({
       name: 'any_name',
-      email: 'any_email@gmail.com',
+      email: 'any_email@mail.com',
       password: 'any_password'
     })
     expect(account.name).toBeTruthy()
