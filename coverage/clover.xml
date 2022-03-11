@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647017499757" clover="3.2.0">
-  <project timestamp="1647017499757" name="All files">
-    <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3" elements="11" coveredelements="8" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
-    <file name="mongo-helper.ts" path="D:\projetos_node\clean-node-api\src\infra\db\mongodb\helpers\mongo-helper.ts">
-      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-    </file>
+<coverage generated="1647019049712" clover="3.2.0">
+  <project timestamp="1647019049712" name="All files">
+    <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="12" coveredelements="12" complexity="0" loc="9" ncloc="9" packages="2" files="2" classes="2"/>
+    <package name="adapters">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="express-route-adapter.ts" path="D:\projetos_node\clean-node-api\src\main\adapters\express-route-adapter.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="routes">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="signup-routes.ts" path="D:\projetos_node\clean-node-api\src\main\routes\signup-routes.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
