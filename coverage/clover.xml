@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647012556328" clover="3.2.0">
-  <project timestamp="1647012556328" name="All files">
-    <metrics statements="22" coveredstatements="13" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="4" elements="34" coveredelements="17" complexity="0" loc="22" ncloc="22" packages="3" files="4" classes="4"/>
-    <package name="infra.db.mongodb.helpers">
+<coverage generated="1647017499757" clover="3.2.0">
+  <project timestamp="1647017499757" name="All files">
+    <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3" elements="11" coveredelements="8" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
+    <file name="mongo-helper.ts" path="D:\projetos_node\clean-node-api\src\infra\db\mongodb\helpers\mongo-helper.ts">
       <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-      <file name="mongo-helper.ts" path="D:\projetos_node\clean-node-api\src\infra\db\mongodb\helpers\mongo-helper.ts">
-        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="main">
-      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="server.ts" path="D:\projetos_node\clean-node-api\src\main\server.ts">
-        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="main.config">
-      <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="app.ts" path="D:\projetos_node\clean-node-api\src\main\config\app.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-      </file>
-      <file name="env.ts" path="D:\projetos_node\clean-node-api\src\main\config\env.ts">
-        <metrics statements="1" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-      </file>
-    </package>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>
