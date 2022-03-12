@@ -19,7 +19,7 @@ module.exports = {
   // Indicates whether the coverage information should be collected while executing the test
   roots: ['<rootDir>/src'],
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts','!<rootDir>/src/main/**'],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   preset: "@shelf/jest-mongodb",
