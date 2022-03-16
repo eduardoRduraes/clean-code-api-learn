@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647453799569" clover="3.2.0">
-  <project timestamp="1647453799570" name="All files">
+<coverage generated="1647456091890" clover="3.2.0">
+  <project timestamp="1647456091890" name="All files">
     <metrics statements="80" coveredstatements="70" conditionals="4" coveredconditionals="4" methods="19" coveredmethods="19" elements="103" coveredelements="93" complexity="0" loc="80" ncloc="80" packages="10" files="15" classes="15"/>
     <package name="data.usecases.add-account">
       <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -67,7 +67,7 @@
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
     </package>
     <package name="presentation.controllers.signup">
