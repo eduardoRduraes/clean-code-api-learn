@@ -9,9 +9,9 @@ import { LogControllerDecorator } from '../decorators/log'
 
 export const makeSignUpController = (): Controller => {
   const salt = 12
+  const emailValidatorAdapter = new EmailValidatorAdapter()
   const bcryptAdapter = new BcryptAdapter(salt)
   const accountMongoRepository = new AccountMongoRepository()
-  const emailValidatorAdapter = new EmailValidatorAdapter()
   const dbAddAccount = new DBAddAccount(bcryptAdapter, accountMongoRepository)
   const signUpController = new SignUpController(emailValidatorAdapter, dbAddAccount)
   const logMongoRepository = new LogMongoRepository()
