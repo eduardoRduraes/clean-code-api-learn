@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647366881996" clover="3.2.0">
-  <project timestamp="1647366881996" name="All files">
+<coverage generated="1647400962598" clover="3.2.0">
+  <project timestamp="1647400962598" name="All files">
     <metrics statements="76" coveredstatements="66" conditionals="4" coveredconditionals="4" methods="18" coveredmethods="18" elements="98" coveredelements="88" complexity="0" loc="76" ncloc="76" packages="9" files="14" classes="14"/>
     <package name="data.usecases.add-account">
       <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -47,21 +47,21 @@
       <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
       <file name="mongo-helper.ts" path="C:\projetos_node\clean-code-api\src\infra\db\mongodb\helpers\mongo-helper.ts">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="18" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
       </file>
     </package>
     <package name="presentation.controllers.signup">
-      <metrics statements="24" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="23" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="signup-protocols.ts" path="C:\projetos_node\clean-code-api\src\presentation\controllers\signup\signup-protocols.ts">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
@@ -70,7 +70,7 @@
         <line num="4" count="0" type="stmt"/>
       </file>
       <file name="signup.ts" path="C:\projetos_node\clean-code-api\src\presentation\controllers\signup\signup.ts">
-        <metrics statements="20" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="2" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
@@ -88,46 +88,46 @@
         <line num="30" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="31" count="1" type="stmt"/>
         <line num="33" count="5" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
       </file>
     </package>
     <package name="presentation.errors">
-      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="C:\projetos_node\clean-code-api\src\presentation\errors\index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
       </file>
       <file name="invalidParamError.ts" path="C:\projetos_node\clean-code-api\src\presentation\errors\invalidParamError.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
       </file>
       <file name="missing-param-error.ts" path="C:\projetos_node\clean-code-api\src\presentation\errors\missing-param-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
         <line num="3" count="8" type="stmt"/>
         <line num="4" count="8" type="stmt"/>
       </file>
       <file name="server-error.ts" path="C:\projetos_node\clean-code-api\src\presentation\errors\server-error.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
       </file>
     </package>
     <package name="presentation.helpers">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="http-helper.ts" path="C:\projetos_node\clean-code-api\src\presentation\helpers\http-helper.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
       </file>
     </package>
     <package name="presentation.protocols">
