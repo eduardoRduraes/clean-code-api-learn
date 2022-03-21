@@ -1,6 +1,5 @@
-import { rejects } from "assert"
 import { InvalidParamError, MissingParamError } from "../../errors"
-import { badRequest, serverError, unauthorized } from "../../helpers/http-helper"
+import { badRequest, ok, serverError, unauthorized } from "../../helpers/http-helper"
 import { LoginController } from "./login"
 import { Authentication, EmailValidator, HttpRequest } from "./login-protocols"
 
@@ -119,5 +118,12 @@ describe('Login Controller', ()=>{
 
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(unauthorized())
+  })
+
+  test('Should return 200 if ivalid crendetials are provider', async ()=>{
+    const { sut,  } = makeSut()
+
+    const httpResponse = await sut.handle(makeFakeRequest())
+    expect(httpResponse).toEqual(ok({accessToken: 'any_token'}))
   })
 })
