@@ -1,7 +1,7 @@
 import { MissingParamError } from "../../errors"
 import { badRequest, ok, serverError, unauthorized } from "../../helpers/http/http-helper"
 import { LoginController } from "./login"
-import { Authentication, HttpRequest, Validation } from "./login-protocols"
+import { Authentication, AuthenticationModel, HttpRequest, Validation } from "./login-protocols"
 
 
 const makeFakeRequest = ():HttpRequest =>({
@@ -28,7 +28,7 @@ interface SutTypes {
 
 const makeAuthentication = (): Authentication =>{
   class AuthenticationStub implements Authentication {
-    async auth (email:string, password: string): Promise<string>{
+    async auth (authenticationModel: AuthenticationModel): Promise<string>{
       return new Promise(resolve =>resolve('any_token'))
     }
   }
@@ -110,7 +110,10 @@ describe('Login Controller', ()=>{
     const authSpy = jest.spyOn(authenticationStub, 'auth')
 
     await sut.handle(makeFakeRequest())
-    expect(authSpy).toHaveBeenCalledWith('any_email@mail.com', 'any_password')
+    expect(authSpy).toHaveBeenCalledWith({
+      email:'any_email@mail.com',
+      password: 'any_password'
+    })
   })
 
   test('Should return 401 if invalid crendetials are provider', async ()=>{
@@ -122,7 +125,7 @@ describe('Login Controller', ()=>{
   })
 
   test('Should return 200 if ivalid crendetials are provider', async ()=>{
-    const { sut,  } = makeSut()
+    const { sut } = makeSut()
 
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(ok({accessToken: 'any_token'}))
