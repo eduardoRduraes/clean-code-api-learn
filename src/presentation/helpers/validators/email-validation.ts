@@ -1,5 +1,5 @@
+import { InvalidParamError } from "../../errors";
 import { EmailValidator } from "../../protocols/email-validator";
-import { InvalidParamError, MissingParamError } from "../../errors";
 import { Validation } from "../../protocols/validation";
 
 

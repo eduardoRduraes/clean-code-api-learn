@@ -1,5 +1,5 @@
+import { Validation } from "../../../presentation/protocols/validation";
 import { InvalidParamError } from "../../errors";
-import { Validation } from "../../protocols/validation";
 
 
 export class CompareFieldsValidation implements Validation{
