@@ -1,4 +1,4 @@
-import { badRequest, ok, serverError } from '../../../presentation/helpers/http-helper'
+import { badRequest, ok, serverError } from '../../helpers/http/http-helper'
 import { MissingParamError, ServerError } from '../../errors'
 import { SignUpController } from './signup'
 import { AccountModel, AddAccount, AddAccountModel, HttpRequest, Validation } from './signup-protocols'
