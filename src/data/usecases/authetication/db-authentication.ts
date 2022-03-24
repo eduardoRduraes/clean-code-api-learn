@@ -1,21 +1,21 @@
-import { AuthenticationModel,LoadAccountByEmailRepository,HashComparer,TokenGenerator,UpdateAccessTokenRepository, Authentication } from "./db-authentication-protocols"
+import { AuthenticationModel,LoadAccountByEmailRepository,HashComparer,Encrypter,UpdateAccessTokenRepository, Authentication } from "./db-authentication-protocols"
 
 
 export class DBAuthentication implements Authentication{
   private readonly loadAccountByEmailRepository : LoadAccountByEmailRepository
   private readonly hashComparer: HashComparer
-  private readonly tokenGenerator: TokenGenerator
+  private readonly encrypter: Encrypter
   private readonly updateAccessTokenRepository: UpdateAccessTokenRepository
 
   constructor(
     loadAccountByEmailRepository: LoadAccountByEmailRepository,
     hashComparer: HashComparer,
-    tokenGenerator: TokenGenerator,
+    encrypter: Encrypter,
     updateAccessTokenRepository: UpdateAccessTokenRepository
     ){
     this.loadAccountByEmailRepository = loadAccountByEmailRepository
     this.hashComparer = hashComparer
-    this.tokenGenerator = tokenGenerator
+    this.encrypter = encrypter
     this.updateAccessTokenRepository = updateAccessTokenRepository
   }
 
@@ -25,7 +25,7 @@ export class DBAuthentication implements Authentication{
     if(account){
       const isvalid = await this.hashComparer.compare(authentication.password, account.password)
       if(isvalid){
-        const accessToken = await this.tokenGenerator.generate(account.id)
+        const accessToken = await this.encrypter.encrypt(account.id)
         await this.updateAccessTokenRepository.update(account.id, accessToken)
         return accessToken
       }
