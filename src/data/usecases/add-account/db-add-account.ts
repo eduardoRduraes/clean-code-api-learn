@@ -1,5 +1,5 @@
 import { AddAccount,AccountModel,AddAccountModel, Hasher } from './db-add-account-protocols'
-import { AddAccountRepository } from '../../protocols/db/add-account-repository'
+import { AddAccountRepository } from '../../protocols/db/account/add-account-repository'
 export class DBAddAccount implements AddAccount{
   private readonly hasher: Hasher
   private readonly addAccountRepository: AddAccountRepository
