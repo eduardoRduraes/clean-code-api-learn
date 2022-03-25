@@ -45,7 +45,7 @@ describe('DBAuthentication UseCase', ()=> {
 
   const makeUpdateAccessTokenRepository = (): UpdateAccessTokenRepository => {
     class UpdateAccessTokenRepositoryStub implements UpdateAccessTokenRepository{
-      async updateAccessToken (value: string, token: string): Promise<void>{
+      async updateAccessToken (id: string, token: string): Promise<void>{
         return new Promise(resolve =>resolve())
       }
 
