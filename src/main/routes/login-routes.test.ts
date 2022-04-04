@@ -53,4 +53,14 @@ describe('POST /login', () => {
     })
     .expect(200)
   })
+
+  test('Should return 401 on login', async ()=> {
+    await request(await setupApp())
+    .post('/api/login')
+    .send({
+      email: 'eduardoduraes.bsi@gmail.com',
+      password: '123'
+    })
+    .expect(401)
+  })
 })
