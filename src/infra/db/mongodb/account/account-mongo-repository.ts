@@ -30,6 +30,6 @@ import { ObjectId } from 'mongodb';
         $set:{
           accessToken: token
         }
-      }).then(res=>console.log(res))
+      })
   }
 }
