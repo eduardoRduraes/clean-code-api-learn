@@ -11,10 +11,10 @@
           "@/tests/*": ["../tests/*"],
           "@/*":["*"]
         },
-        "allowJs": true,
+        // "allowJs": true,
         // "strict": true,
         // "strictNullChecks": true,
     },
-    "include": ["src", "tests"],
+    "include": ["src"],
     "exclude": []
 }
