@@ -46,5 +46,8 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "prepare": "husky install"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
