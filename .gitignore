@@ -3,3 +3,5 @@ dist
 coverage
 data
 .husky
+!src/data
+.vscode

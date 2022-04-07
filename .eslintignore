@@ -2,3 +2,5 @@ node_modules
 dist
 converage
 .husky
+./data
+.vscode
