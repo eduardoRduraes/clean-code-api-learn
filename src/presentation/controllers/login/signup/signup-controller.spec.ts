@@ -1,5 +1,5 @@
-import { badRequest, forbidden, ok, serverError } from '../../helpers/http/http-helper'
-import { EmailInUserError, MissingParamError, ServerError } from '../../errors'
+import { badRequest, forbidden, ok, serverError } from '../../../helpers/http/http-helper'
+import { EmailInUserError, MissingParamError, ServerError } from '../../../errors'
 import { SignUpController } from './signup-controller'
 import { AccountModel, AddAccount, AddAccountModel, Authentication, AuthenticationModel, HttpRequest, Validation } from './signup-controller-protocols'
 import { access } from 'fs'

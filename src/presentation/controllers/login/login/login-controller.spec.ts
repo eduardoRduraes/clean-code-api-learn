@@ -1,5 +1,7 @@
-import { MissingParamError } from "../../errors"
-import { badRequest, ok, serverError, unauthorized } from "../../helpers/http/http-helper"
+
+
+import { MissingParamError } from "../../../errors"
+import { badRequest, serverError, unauthorized,ok } from "../../../helpers/http/http-helper"
 import { LoginController } from "./login-controller"
 import { Authentication, AuthenticationModel, HttpRequest, Validation } from "./login-controller-protocols"
 
@@ -124,7 +126,7 @@ describe('Login Controller', ()=>{
     expect(httpResponse).toEqual(unauthorized())
   })
 
-  test('Should return 200 if ivalid crendetials are provider', async ()=>{
+  test('Should return 200 if invalid crendetials are provider', async ()=>{
     const { sut } = makeSut()
 
     const httpResponse = await sut.handle(makeFakeRequest())
