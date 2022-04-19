@@ -1,4 +1,4 @@
-import { HttpResponse } from '../../../validation/protocols'
+import { HttpResponse } from '../../protocols'
 import { ServerError,UnauthorizedError } from '../../errors'
 
 export const badRequest = (error: Error): HttpResponse => ({

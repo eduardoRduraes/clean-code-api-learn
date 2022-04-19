@@ -1,4 +1,4 @@
-import { Validation } from "../../../../validation/protocols/validation"
+import { Validation } from "../../../../presentation/protocols/validation"
 import { RequiredFieldValidation, ValidationComposite } from '../../../../validation/validator'
 
 
