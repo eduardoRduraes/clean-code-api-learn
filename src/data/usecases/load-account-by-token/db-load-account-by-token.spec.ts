@@ -8,7 +8,7 @@ describe('DbLoadAccountByToken Usecase', () => {
   }
 
   const makeSut = ():SutTypes =>{
-    const decrypterStub = makeDecripterStub()
+    const decrypterStub = makeDecripter()
     const sut = new DbLoadAccountByToken(decrypterStub)
     return {
       sut,
@@ -16,7 +16,7 @@ describe('DbLoadAccountByToken Usecase', () => {
     }
   }
 
-  const makeDecripterStub = ():Decrypter =>{
+  const makeDecripter = ():Decrypter =>{
     class DecrypterStub implements Decrypter {
       async decrypt(value: string): Promise<string> {
         return new Promise(resolve=>resolve('any_value'))
@@ -30,7 +30,16 @@ describe('DbLoadAccountByToken Usecase', () => {
 
     const decryptSpy = jest.spyOn(decrypterStub, 'decrypt')
 
-    await sut.load('any_token')
+    await sut.load('any_token', 'any_role')
     expect(decryptSpy).toHaveBeenCalledWith('any_token')
+  })
+
+  test('Should return null if Decrypter retuns null', async () => {
+    const {sut, decrypterStub} = makeSut()
+
+    jest.spyOn(decrypterStub, 'decrypt').mockReturnValueOnce(new Promise(resolve=>resolve(null)))
+
+    const account = await sut.load('any_token', 'any_role')
+    expect(account).toBeNull()
   })
 })
