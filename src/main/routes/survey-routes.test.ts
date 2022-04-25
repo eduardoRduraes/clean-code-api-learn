@@ -27,18 +27,18 @@ const makeFakeSurveyData = (): any => ({
             image: 'http://image-name.com'
           },
           {
-            answer: 'Answer 1'
+            answer: 'Answer 2'
           },
         ]
       })
 
 describe('Survey Routes',()=> {
   describe('POST /surveys', () => {
-      test('Should return 200 on survey', async() => {
+      test('Should return 403 on add survey without accessToken', async() => {
       await request(await setupApp())
       .post('/api/surveys')
       .send(makeFakeSurveyData())
-      .expect(204)
+      .expect(403)
     })
   })
 })
