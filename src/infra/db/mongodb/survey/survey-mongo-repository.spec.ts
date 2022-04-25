@@ -2,6 +2,7 @@ import { Collection } from "mongodb"
 import { AddSurveyModel } from "../../../../domain/usecases/add-survey"
 import { MongoHelper } from "../helpers/mongo-helper"
 import { SurveyMongoRepository } from './survey-mongo-repository'
+import MockDate from 'mockdate'
 
 describe('Survey Mongo Repository', () =>{
 
@@ -9,6 +10,7 @@ describe('Survey Mongo Repository', () =>{
 
   beforeAll(async ()=>{
     await MongoHelper.connect(process.env.MONGO_URL)
+    MockDate.set(new Date())
   })
 
   afterAll(async ()=>{
@@ -18,6 +20,7 @@ describe('Survey Mongo Repository', () =>{
   beforeEach(async ()=>{
     surveyCollection = await MongoHelper.getCollection('surveys')
     await surveyCollection.deleteMany({})
+    MockDate.reset()
   })
 
   const makeSut = (): SurveyMongoRepository => {
@@ -32,7 +35,8 @@ describe('Survey Mongo Repository', () =>{
     },
     {
       answer: 'other_answer'
-    }]
+    }],
+    date: new Date()
   })
 
   test('Should return an survey on add success', async () => {

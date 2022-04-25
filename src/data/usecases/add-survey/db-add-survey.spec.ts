@@ -1,15 +1,24 @@
+import MockDate from 'mockdate'
 import { DbAddSurvey } from './db-add-survey'
 import { AddSurveyModel, AddSurveyRepository } from './db-add-survey-protocols'
-import {serverError} from '../../../presentation/helpers/http/http-helper'
 
 describe('DbAddSurvey UseCase', () => {
+
+  beforeAll(()=>{
+    MockDate.set(new Date())
+  })
+
+  afterAll(()=>{
+    MockDate.reset()
+  })
 
   const makefakeSurvey = (): AddSurveyModel =>({
     question: 'any_question',
     answers: [{
       image: 'any_image',
       answer: 'any_answer'
-    }]
+    }],
+    date: new Date()
   })
 
   interface SutTypes {
