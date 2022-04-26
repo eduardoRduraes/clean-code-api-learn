@@ -8,7 +8,6 @@
         "rootDirs": ["src", "tests"],
         "baseUrl": "src",
         "paths": {
-          "@/tests/*": ["../tests/*"],
           "@/*":["*"]
         },
         // "allowJs": true,
@@ -16,8 +15,5 @@
         // "strictNullChecks": true,
     },
     "include": ["src"],
-    "exclude": [
-      "**/*.spec.ts",
-      "**/*.test.ts"
-    ]
+    "exclude": []
 }
