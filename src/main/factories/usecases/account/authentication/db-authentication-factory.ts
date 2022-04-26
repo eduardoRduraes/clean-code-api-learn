@@ -1,9 +1,9 @@
-import env from "../../../../config/env"
-import { DBAuthentication } from "../../../../../data/usecases/authetication/db-authentication"
-import { Authentication } from "../../../../../domain/usecases/authenticatoin"
-import { BcryptAdapter } from "../../../../../infra/criptography/bcrypt-adapter/bcrypt-adapter"
-import { JwtAdapter } from "../../../../../infra/criptography/jwt-adapter/jwt-adapter"
-import { AccountMongoRepository } from "../../../../../infra/db/mongodb/account/account-mongo-repository"
+import env from "@/main/config/env"
+import { DBAuthentication } from "@/data/usecases/authetication/db-authentication"
+import { Authentication } from "@/domain/usecases/authenticatoin"
+import { BcryptAdapter } from "@/infra/criptography/bcrypt-adapter/bcrypt-adapter"
+import { JwtAdapter } from "@/infra/criptography/jwt-adapter/jwt-adapter"
+import { AccountMongoRepository } from "@/infra/db/mongodb/account/account-mongo-repository"
 
 
 

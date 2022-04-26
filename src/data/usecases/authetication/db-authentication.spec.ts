@@ -1,6 +1,6 @@
 import { DBAuthentication } from "./db-authentication"
 import { AuthenticationModel,LoadAccountByEmailRepository,HashComparer,Encrypter,UpdateAccessTokenRepository } from "./db-authentication-protocols"
-import { AccountModel } from "../../../domain/models/account"
+import { AccountModel } from "@/domain/models/account"
 
 describe('DBAuthentication UseCase', ()=> {
 
