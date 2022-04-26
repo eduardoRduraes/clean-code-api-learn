@@ -10,6 +10,14 @@ describe('AddSurvey Controller', () => {
     addSurveyStub: AddSurvey
   }
 
+  beforeAll(() => {
+    MockDate.set('2022-04-25')
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
   const makeSut = (): SutTypes => {
     const validatationStub = makeValidationStub()
     const addSurveyStub = makeAddSurveyStub()

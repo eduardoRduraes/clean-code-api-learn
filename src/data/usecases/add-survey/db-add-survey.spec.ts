@@ -44,18 +44,27 @@ describe('DbAddSurvey UseCase', () => {
     return new AddSurveyRepository()
   }
 
-  test('Should Call AddSurveyRepository with correct values', async () => {
-    const { sut,addSurveyRepositoryStub } = makeSut()
-    const surveyData = makefakeSurvey()
-    const addSpy = jest.spyOn(addSurveyRepositoryStub, 'add')
-    await sut.add(surveyData)
-    expect(addSpy).toHaveBeenCalledWith(makefakeSurvey())
-  })
+  describe('AddSurveyAddSurveyRepository', () => {
+    beforeAll(()=>{
+      MockDate.set('2022-04-25')
+    })
 
-  test('Should throw if AddSurveyRepository throws', async () => {
-    const { sut,addSurveyRepositoryStub } = makeSut()
-    jest.spyOn(addSurveyRepositoryStub, 'add').mockReturnValueOnce(new Promise((resolve,reject)=>reject(new Error())))
-    const promise = sut.add(makefakeSurvey())
-    expect(promise).rejects.toThrow()
+    afterAll(()=>{
+      MockDate.reset()
+    })
+    test('Should Call AddSurveyRepository with correct values', async () => {
+      const { sut,addSurveyRepositoryStub } = makeSut()
+      const surveyData = makefakeSurvey()
+      const addSpy = jest.spyOn(addSurveyRepositoryStub, 'add')
+      await sut.add(surveyData)
+      expect(addSpy).toHaveBeenCalledWith(makefakeSurvey())
+    })
+
+    test('Should throw if AddSurveyRepository throws', async () => {
+      const { sut,addSurveyRepositoryStub } = makeSut()
+      jest.spyOn(addSurveyRepositoryStub, 'add').mockReturnValueOnce(new Promise((resolve,reject)=>reject(new Error())))
+      const promise = sut.add(makefakeSurvey())
+      expect(promise).rejects.toThrow()
+    })
   })
 })
