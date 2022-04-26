@@ -38,6 +38,28 @@ let accountCollection: Collection
     ]
   })
 
+  const makeAccessToken = async():Promise<string> =>{
+    accountCollection.insertOne({
+      name: 'any_name',
+      email: 'any_email@mail.com',
+      password: '123',
+      role: 'admin'
+    })
+    const response = await accountCollection.findOne({email: 'any_email@mail.com'})
+    const accessToken = sign({id: response._id}, env.jwtSecret)
+
+    await accountCollection.updateOne({
+      _id: new ObjectId(response._id)
+    },
+    {
+      $set:{
+        accessToken
+      }
+    })
+
+    return accessToken
+  }
+
 describe('Survey Routes',()=> {
   describe('POST /surveys', () => {
     test('Should return 403 on add survey without accessToken', async() => {
@@ -48,24 +70,7 @@ describe('Survey Routes',()=> {
     })
 
     test('Should return 204 on add survey with valid accessToken', async() => {
-      accountCollection.insertOne({
-        name: 'any_name',
-        email: 'any_email@mail.com',
-        password: '123',
-        role: 'admin'
-      })
-      const response = await accountCollection.findOne({email: 'any_email@mail.com'})
-      const accessToken = sign({id: response._id}, env.jwtSecret)
-
-      await accountCollection.updateOne({
-        _id: new ObjectId(response._id)
-      },
-      {
-        $set:{
-          accessToken
-        }
-      })
-
+      const accessToken = await makeAccessToken()
       await request(await setupApp())
       .post('/api/surveys')
       .set('x-access-token', accessToken)
@@ -82,8 +87,8 @@ describe('Survey Routes',()=> {
       .expect(403)
     })
 
-    test('Should return 200 on load survey with valid accessToken', async() => {
-      accountCollection.insertOne({
+    test('Should return 204 on load survey with valid accessToken', async() => {
+      await accountCollection.insertOne({
         name: 'Eduardo R Duraes',
         email: 'eduardoduraes.bsi@gmail.com',
         password: '123'
@@ -100,23 +105,10 @@ describe('Survey Routes',()=> {
         }
       })
 
-      await surveyCollection.insertMany([{
-        question: 'any_question',
-        answers: [{
-          image: 'any_image',
-          answer: 'any_answer'
-        },
-        {
-          answer: 'other_answer'
-        }],
-        date: new Date()
-      }])
-
-
       await request(await setupApp())
       .get('/api/surveys')
       .set('x-access-token', accessToken)
-      .expect(200)
+      .expect(204)
     })
   })
 })
