@@ -1,12 +1,23 @@
 import { DbLoadSurveys } from './db-load-surveys'
 import { LoadSurveyRepository, SurveyModel } from './db-load-surveys-protocols'
+import mockDate from 'mockdate'
 
-type SutTypes = {
-  sut: DbLoadSurveys,
-  loadSurveyRepositoryStub: LoadSurveyRepository
-}
 
 describe('DbLoadSurveys', () => {
+
+  beforeAll(() => {
+    mockDate.set(new Date())
+  })
+
+  afterAll(() => {
+    mockDate.reset()
+  })
+
+  type SutTypes = {
+    sut: DbLoadSurveys,
+    loadSurveyRepositoryStub: LoadSurveyRepository
+  }
+
   const makeSut = (): SutTypes => {
     const loadSurveyRepositoryStub = makeLoadSurveyRepository()
     const sut = new DbLoadSurveys(loadSurveyRepositoryStub)
