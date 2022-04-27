@@ -3,7 +3,7 @@ import { badRequest, forbidden, ok, serverError } from '@/presentation/helpers/h
 import { SignUpController } from './signup-controller'
 import { AccountModel, AddAccount, AddAccountModel, Authentication, AuthenticationModel, HttpRequest, Validation } from './signup-controller-protocols'
 
-interface SutTypes {
+type SutTypes = {
   sut: SignUpController
   addAccountStub: AddAccount
   validationStub: Validation

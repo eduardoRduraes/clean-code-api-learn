@@ -4,7 +4,7 @@ import { badRequest, noContent, serverError } from '@/presentation/helpers/http/
 import MockDate from 'mockdate'
 
 describe('AddSurvey Controller', () => {
-  interface SutTypes {
+  type SutTypes = {
     sut: AddSurveyController
     validatationStub: Validation
     addSurveyStub: AddSurvey

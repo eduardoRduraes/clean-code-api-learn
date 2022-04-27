@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt'
 import { BcryptAdapter } from './bcrypt-adapter'
 
-interface BcryptAdapterStub{
+type BcryptAdapterStub = {
   sut : BcryptAdapter
   salt: number
 }

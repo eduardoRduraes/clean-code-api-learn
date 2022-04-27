@@ -4,3 +4,4 @@ converage
 .husky
 ./data
 .vscode
+globalConfig.json
