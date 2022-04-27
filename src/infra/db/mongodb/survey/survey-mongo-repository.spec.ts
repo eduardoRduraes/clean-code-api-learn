@@ -3,6 +3,9 @@ import { Collection } from "mongodb"
 import { AddSurveyModel } from "@/domain/usecases/add-survey"
 import { MongoHelper } from "../helpers/mongo-helper"
 import { SurveyMongoRepository } from './survey-mongo-repository'
+import { LoadSurveyById } from '@/domain/usecases/load-survey-by-id'
+import { SurveyModel } from '@/domain/models/survey'
+import { SurveyResultModel } from '@/domain/models/survey-result'
 
 describe('Survey Mongo Repository', () =>{
 
@@ -16,6 +19,11 @@ describe('Survey Mongo Repository', () =>{
   afterAll(async ()=>{
     await MongoHelper.disconnect()
   })
+
+  type SutType = {
+    sut: SurveyMongoRepository,
+    loadSurveyByIdStub: LoadSurveyById
+  }
 
   beforeEach(async ()=>{
     surveyCollection = await MongoHelper.getCollection('surveys')
@@ -65,6 +73,15 @@ describe('Survey Mongo Repository', () =>{
       const sut = makeSut()
       const surveys = await sut.loadAll()
       expect(surveys.length).toBe(0)
+    })
+  })
+
+  describe('loadById()', () => {
+    test('Should load surveys by id on success', async () => {
+      const response = await surveyCollection.insertOne(makeFakeSurveyData())
+      const sut = makeSut()
+      const survey = await sut.loadById(response.insertedId.toString())
+      expect(survey).toBeTruthy()
     })
   })
 })
