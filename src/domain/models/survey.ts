@@ -1,4 +1,4 @@
-export interface SurveyModel {
+export type SurveyModel = {
   id: string,
   image?:string,
   question: string,
@@ -6,7 +6,7 @@ export interface SurveyModel {
   date: Date
 }
 
-export interface SurveyAnswerModel {
+export type SurveyAnswerModel = {
   image?: string,
   answer: string
 }

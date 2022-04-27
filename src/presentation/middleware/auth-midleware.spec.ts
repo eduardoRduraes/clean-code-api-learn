@@ -4,7 +4,7 @@ import { forbidden, serverError, ok } from '@/presentation/helpers/http/http-hel
 import { AccessDeniedError } from '@/presentation/errors'
 
 
-interface SutTypes {
+type SutTypes = {
   sut: AuthMiddleware,
   loadAccountByTokenStub: LoadAccountByToken
 }
