@@ -1,5 +1,7 @@
-import { AddSurveyModel, AddSurveyRepository } from "@/data/usecases/add-survey/db-add-survey-protocols";
-import { LoadSurveyRepository, SurveyModel } from "@/data/usecases/load-surveys/db-load-surveys-protocols";
+
+import { AddSurveyRepository } from "@/data/protocols/db/survey/add-survey-repository";
+import { LoadSurveyRepository, SurveyModel } from "@/data/usecases/survey/load-surveys/db-load-surveys-protocols";
+import { AddSurveyModel } from "@/domain/usecases/add-survey";
 import { LoadSurveyById } from "@/domain/usecases/load-survey-by-id";
 import { ObjectId } from "mongodb";
 import { MongoHelper } from "../helpers/mongo-helper";

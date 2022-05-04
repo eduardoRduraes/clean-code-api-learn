@@ -1,6 +1,6 @@
 import MockDate from 'mockdate'
 import { SurveyModel } from '../load-surveys/db-load-surveys-protocols'
-import { LoadSurveyByIdRepository } from '../../protocols/db/survey/load-surveys-by-id-repository'
+import { LoadSurveyByIdRepository } from '../../../protocols/db/survey/load-surveys-by-id-repository'
 import { DbLoadSurveyById } from './db-load-survey-by-id'
 
 describe('DbLoadSurveyById', () => {

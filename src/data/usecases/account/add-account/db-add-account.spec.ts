@@ -1,4 +1,4 @@
-import { DBAddAccount, AccountModel, AddAccountModel, Hasher, AddAccountRepository, LoadAccountByEmailRepository, AuthenticationModel } from "./db-add-account-protocols"
+import { DBAddAccount, AccountModel, AddAccountModel, Hasher, AddAccountRepository, LoadAccountByEmailRepository } from "./db-add-account-protocols"
 
 type SutTypes = {
   sut: DBAddAccount

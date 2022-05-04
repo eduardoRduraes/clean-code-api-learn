@@ -1,6 +1,7 @@
 import { DBAuthentication } from "./db-authentication"
-import { AuthenticationModel,LoadAccountByEmailRepository,HashComparer,Encrypter,UpdateAccessTokenRepository } from "./db-authentication-protocols"
+import { LoadAccountByEmailRepository,HashComparer,Encrypter,UpdateAccessTokenRepository } from "./db-authentication-protocols"
 import { AccountModel } from "@/domain/models/account"
+import { AuthenticationModel } from "@/domain/usecases/authenticatoin"
 
 describe('DBAuthentication UseCase', ()=> {
 
