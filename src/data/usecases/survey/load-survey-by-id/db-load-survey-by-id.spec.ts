@@ -62,7 +62,7 @@ describe('DbLoadSurveyById', () => {
     expect(promise).rejects.toThrow()
   })
 
-  test('Should return Survey on success', async () => {
+  test('Should return SurveyResult on success', async () => {
     const { sut } = makeSut()
     const survey =  await sut.loadById(makeFakeSurveys().id)
     expect(survey).toEqual(makeFakeSurveys())
