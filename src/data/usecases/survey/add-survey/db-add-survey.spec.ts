@@ -45,13 +45,6 @@ describe('DbAddSurvey UseCase', () => {
   }
 
   describe('AddSurveyAddSurveyRepository', () => {
-    beforeAll(()=>{
-      MockDate.set('2022-04-25')
-    })
-
-    afterAll(()=>{
-      MockDate.reset()
-    })
     test('Should Call AddSurveyRepository with correct values', async () => {
       const { sut,addSurveyRepositoryStub } = makeSut()
       const surveyData = makefakeSurvey()
