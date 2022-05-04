@@ -1,11 +1,8 @@
+import { AddSurveyModel } from "@/domain/usecases/add-survey"
 import MockDate from 'mockdate'
 import { Collection } from "mongodb"
-import { AddSurveyModel } from "@/domain/usecases/add-survey"
 import { MongoHelper } from "../helpers/mongo-helper"
 import { SurveyMongoRepository } from './survey-mongo-repository'
-import { LoadSurveyById } from '@/domain/usecases/load-survey-by-id'
-import { SurveyModel } from '@/domain/models/survey'
-import { SurveyResultModel } from '@/domain/models/survey-result'
 
 describe('Survey Mongo Repository', () =>{
 
@@ -18,17 +15,12 @@ describe('Survey Mongo Repository', () =>{
 
   afterAll(async ()=>{
     await MongoHelper.disconnect()
+    MockDate.reset()
   })
-
-  type SutType = {
-    sut: SurveyMongoRepository,
-    loadSurveyByIdStub: LoadSurveyById
-  }
 
   beforeEach(async ()=>{
     surveyCollection = await MongoHelper.getCollection('surveys')
     await surveyCollection.deleteMany({})
-    MockDate.reset()
   })
 
   const makeSut = (): SurveyMongoRepository => {
