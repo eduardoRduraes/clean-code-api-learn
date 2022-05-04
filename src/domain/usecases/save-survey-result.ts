@@ -3,6 +3,6 @@ import { SurveyResultModel } from "../models/survey-result"
 
 export type SaveSurveyResultModel = Omit<SurveyResultModel, 'id'>
 
-export type SaveSurveyResult = {
+export interface SaveSurveyResult {
   save (data: SaveSurveyResultModel): Promise<SurveyResultModel>
 }
