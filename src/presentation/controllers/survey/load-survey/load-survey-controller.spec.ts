@@ -37,7 +37,7 @@ describe('LoadSurvey Controller', () => {
 
   const makeFakeSurveys = (): SurveyModel[] => {
     return [
-     {
+      {
       id: 'any_id',
       question: 'any_question',
       answers: [{
@@ -46,7 +46,7 @@ describe('LoadSurvey Controller', () => {
       }],
       date: new Date()
     },
-     {
+      {
       id: 'other_id',
       question: 'other_question',
       answers: [{
@@ -56,7 +56,7 @@ describe('LoadSurvey Controller', () => {
       date: new Date()
     }
   ]
-  }
+}
 
   test('Should call LoadSurveys', async () => {
     const {sut, loadSurveyStub} = makeSut()
