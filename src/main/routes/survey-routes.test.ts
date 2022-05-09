@@ -61,55 +61,90 @@ let accountCollection: Collection
   }
 
 describe('Survey Routes',()=> {
-  describe('POST /surveys', () => {
-    test('Should return 403 on add survey without accessToken', async() => {
-      await request(await setupApp())
-      .post('/api/surveys')
-      .send(makeFakeSurveyData())
-      .expect(403)
-    })
+//   describe('POST /surveys', () => {
+//     test('Should return 403 on add survey without accessToken', async() => {
+//       await request(await setupApp())
+//       .post('/api/surveys')
+//       .send(makeFakeSurveyData())
+//       .expect(403)
+//     })
 
-    test('Should return 204 on add survey with valid accessToken', async() => {
-      const accessToken = await makeAccessToken()
-      await request(await setupApp())
-      .post('/api/surveys')
-      .set('x-access-token', accessToken)
-      .send(makeFakeSurveyData())
-      .expect(204)
-    })
-  })
+//     test('Should return 204 on add survey with valid accessToken', async() => {
+//       const accessToken = await makeAccessToken()
+//       await request(await setupApp())
+//       .post('/api/surveys')
+//       .set('x-access-token', accessToken)
+//       .send(makeFakeSurveyData())
+//       .expect(204)
+//     })
+//   })
 
-  describe('GET /surveys', () => {
+//   describe('GET /surveys', () => {
+//     test('Should return 403 on load survey without accessToken', async() => {
+//       await request(await setupApp())
+//       .get('/api/surveys')
+//       .send(makeFakeSurveyData())
+//       .expect(403)
+//     })
+
+//     test('Should return 204 on load survey with valid accessToken', async() => {
+//       await accountCollection.insertOne({
+//         name: 'Eduardo R Duraes',
+//         email: 'eduardoduraes.bsi@gmail.com',
+//         password: '123'
+//       })
+//       const response = await accountCollection.findOne({email: 'eduardoduraes.bsi@gmail.com'})
+//       const accessToken = sign({id: response._id}, env.jwtSecret)
+
+//       await accountCollection.updateOne({
+//         _id: new ObjectId(response._id)
+//       },
+//       {
+//         $set:{
+//           accessToken
+//         }
+//       })
+
+//       await request(await setupApp())
+//       .get('/api/surveys')
+//       .set('x-access-token', accessToken)
+//       .expect(204)
+//     })
+//   })
+
+  describe('PUT /surveys/:surveyId/results', () => {
     test('Should return 403 on load survey without accessToken', async() => {
       await request(await setupApp())
-      .get('/api/surveys')
-      .send(makeFakeSurveyData())
+      .put('/api/surveys/any_yd/results')
+      .send({
+        answer: 'any_answer'
+      })
       .expect(403)
     })
 
-    test('Should return 204 on load survey with valid accessToken', async() => {
-      await accountCollection.insertOne({
-        name: 'Eduardo R Duraes',
-        email: 'eduardoduraes.bsi@gmail.com',
-        password: '123'
-      })
-      const response = await accountCollection.findOne({email: 'eduardoduraes.bsi@gmail.com'})
-      const accessToken = sign({id: response._id}, env.jwtSecret)
+    // test('Should return 204 on load survey with valid accessToken', async() => {
+    //   await accountCollection.insertOne({
+    //     name: 'Eduardo R Duraes',
+    //     email: 'eduardoduraes.bsi@gmail.com',
+    //     password: '123'
+    //   })
+    //   const response = await accountCollection.findOne({email: 'eduardoduraes.bsi@gmail.com'})
+    //   const accessToken = sign({id: response._id}, env.jwtSecret)
 
-      await accountCollection.updateOne({
-        _id: new ObjectId(response._id)
-      },
-      {
-        $set:{
-          accessToken
-        }
-      })
+    //   await accountCollection.updateOne({
+    //     _id: new ObjectId(response._id)
+    //   },
+    //   {
+    //     $set:{
+    //       accessToken
+    //     }
+    //   })
 
-      await request(await setupApp())
-      .get('/api/surveys')
-      .set('x-access-token', accessToken)
-      .expect(204)
-    })
+    //   await request(await setupApp())
+    //   .get('/api/surveys')
+    //   .set('x-access-token', accessToken)
+    //   .expect(204)
+    // })
   })
 })
 
