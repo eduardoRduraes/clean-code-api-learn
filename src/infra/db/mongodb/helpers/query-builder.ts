@@ -43,6 +43,20 @@ export class QueryBuilder {
     return this
   }
 
+  round (data: object): QueryBuilder {
+    this.query.push({
+      $round: data
+    })
+    return this
+  }
+
+  sort (data: object): QueryBuilder {
+    this.query.push({
+      $sort: data
+    })
+    return this
+  }
+
   build (): object[] {
     return this.query
   }

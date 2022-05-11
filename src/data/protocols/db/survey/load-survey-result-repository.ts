@@ -1,7 +1,7 @@
 import { SurveyResultModel } from "@/domain/models/survey-result";
 
 export interface LoadSurveyResultRepository {
-  loadBySurveyId: (surveyId: string) => Promise<any>
+  loadBySurveyId: (surveyId: string) => Promise<SurveyResultModel>
 }
 
 export namespace LoadSurveyResultRepository {
