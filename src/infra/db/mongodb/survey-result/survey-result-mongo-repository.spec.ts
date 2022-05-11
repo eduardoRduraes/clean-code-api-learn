@@ -75,33 +75,36 @@ describe('Save Survey Result', () => {
       })
 
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toBeTruthy()
-      expect(surveyResult.answer).toBe(survey.answers[0].answer)
+      expect(surveyResult.surveyId.toString()).toEqual(survey.id)
+      expect(surveyResult.answers[0].answer).toBe(survey.answers[0].answer)
+      expect(surveyResult.answers[0].count).toBe(1)
+      expect(surveyResult.answers[0].percent).toBe(100)
     })
 
     test('Should update survey result if its not new', async () => {
       const survey = await makeFakeSurveyData()
       const account = await makeFakeAccount()
 
-      const response = await surveyResultCollection.insertOne({
+      await surveyResultCollection.insertOne({
         accountId: new ObjectId(account.id),
-        suveryId: new ObjectId(survey.id),
-        answer: survey.answers[1].answer,
-        date: new Date()
-      })
-
-      const sut = makeSut()
-
-      const surveyResult = await sut.save({
-        accountId: account.id,
-        surveyId: survey.id,
+        surveyId: new ObjectId(survey.id),
         answer: survey.answers[0].answer,
         date: new Date()
       })
 
+      const sut = makeSut()
+      const surveyResult = await sut.save({
+        accountId: account.id,
+        surveyId: survey.id,
+        answer: survey.answers[1].answer,
+        date: new Date()
+      })
+      console.log(surveyResult)
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toEqual(response.insertedId.toString())
-      expect(surveyResult.answer).toBe(survey.answers[0].answer)
+      expect(surveyResult.surveyId.toString()).toEqual(survey.id)
+      expect(surveyResult.answers[0].answer).toBe(survey.answers[1].answer)
+      expect(surveyResult.answers[0].count).toBe(1)
+      expect(surveyResult.answers[0].percent).toBe(100)
     })
   })
 })

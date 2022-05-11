@@ -1,6 +1,6 @@
-import { SaveSurveyResultController } from "./save-survey-result-controller"
-import { forbidden, HttpRequest, InvalidParamError, LoadSurveyById, serverError, SurveyModel,SaveSurveyResult, SaveSurveyResultModel,SurveyResultModel, ok } from "./save-survey-result-controller-protocols"
 import MockDate from 'mockdate'
+import { SaveSurveyResultController } from "./save-survey-result-controller"
+import { forbidden, HttpRequest, InvalidParamError, LoadSurveyById, ok, SaveSurveyResult, SaveSurveyResultParams, serverError, SurveyModel, SurveyResultModel } from "./save-survey-result-controller-protocols"
 
 
 type SutTypes = {
@@ -40,7 +40,7 @@ describe('SaveSurveyResult Controller', () => {
 
   const makeSaveSurveyResult = (): SaveSurveyResult => {
     class SaveSurveyResultStub implements SaveSurveyResult {
-      async save(data: SaveSurveyResultModel): Promise<SurveyResultModel> {
+      async save(data: SaveSurveyResultParams): Promise<SurveyResultModel> {
         return new Promise(resolve=>resolve(makeFakeSurveyResult()))
       }
     }
@@ -68,10 +68,18 @@ describe('SaveSurveyResult Controller', () => {
   })
 
   const makeFakeSurveyResult = (): SurveyResultModel => ({
-    id: 'valid_id',
-    surveyId: 'valid_survey_id',
-    accountId: 'valid_account_id',
-    answer: 'valid_answer',
+    surveyId: 'any_survey_id',
+    accountId: 'any_account_id',
+    answers: [{
+      answer: 'any_answer',
+      count: 1,
+      percent: 50
+    },{
+      image: 'any_image',
+      answer: 'other_answer',
+      count: 1,
+      percent: 80
+    }],
     date: new Date()
   })
 
