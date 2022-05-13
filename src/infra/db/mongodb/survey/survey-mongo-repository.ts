@@ -12,7 +12,7 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveyRep
   async loadAll(): Promise<SurveyModel[]> {
     const surveysCollection = await MongoHelper.getCollection('surveys')
     const surveys = await surveysCollection.find().toArray()
-    return surveys || MongoHelper.mapCollection(surveys)
+    return MongoHelper.mapCollection(surveys)
   }
 
   async add(surveyData: AddSurveyModel): Promise<void> {
@@ -23,6 +23,6 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveyRep
   async loadById (id: string): Promise<SurveyModel>{
     const surveyCollection = await MongoHelper.getCollection('surveys')
     const survey = await surveyCollection.findOne({_id: new ObjectId(id)})
-    return survey || MongoHelper.map(survey)
+    return MongoHelper.map(survey)
   }
 }
