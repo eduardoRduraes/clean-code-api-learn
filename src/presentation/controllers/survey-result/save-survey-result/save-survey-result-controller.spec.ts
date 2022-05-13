@@ -69,7 +69,7 @@ describe('SaveSurveyResult Controller', () => {
 
   const makeFakeSurveyResult = (): SurveyResultModel => ({
     surveyId: 'any_survey_id',
-    accountId: 'any_account_id',
+    question: 'any_question',
     answers: [{
       answer: 'any_answer',
       count: 1,

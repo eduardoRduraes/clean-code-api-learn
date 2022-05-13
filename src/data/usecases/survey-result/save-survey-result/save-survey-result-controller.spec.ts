@@ -23,7 +23,7 @@ describe('DbSaveSurveyResult', () => {
 
   const makefakeSurveyResult = (): SurveyResultModel => ({
     surveyId: 'survey_id',
-    accountId: 'account_id',
+    question: 'any_question',
     answers: [{
       image: 'any_image',
       answer: 'any_answer',
