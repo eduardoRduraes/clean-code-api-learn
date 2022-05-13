@@ -28,16 +28,14 @@ beforeEach(async () => {
 
 
 const makeFakeSurveyData = (): any => ({
-  question: 'Question',
-  answers:[
-    {
+  question:'Question',
+    answers:[{
       answer: 'Answer 1',
       image: 'http://image-name.com'
-    },
-    {
+    },{
       answer: 'Answer 2'
-    },
-  ]
+    }],
+    date: new Date()
 })
 
 const makeAccessToken = async():Promise<string> =>{
@@ -73,17 +71,7 @@ describe('PUT /surveys/:surveyId/results', () => {
   })
 
   test('Should return 200 on save survey with valid accessToken', async() => {
-    const response = await surveyCollection.insertOne({
-      question:'Question',
-        answers:[{
-          answer: 'Answer 1',
-          image: 'http://image-name.com'
-        },{
-          answer: 'Answer 2'
-        }],
-        date: new Date()
-
-    })
+    const response = await surveyCollection.insertOne(makeFakeSurveyData())
     const accessToken = await makeAccessToken()
     await request(await setupApp())
     .put(`/api/surveys/${response.insertedId.toString()}/results`)
@@ -91,6 +79,23 @@ describe('PUT /surveys/:surveyId/results', () => {
     .send({
       answer: 'Answer 1'
     })
+    .expect(200)
+  })
+})
+
+describe('GET /surveys/:surveyId/results', () => {
+  test('Should return 403 on load survey without accessToken', async() => {
+    await request(await setupApp())
+    .get('/api/surveys/any_yd/results')
+    .expect(403)
+  })
+
+  test('Should return 200 on load survey with valid accessToken', async() => {
+    const response = await surveyCollection.insertOne(makeFakeSurveyData())
+    const accessToken = await makeAccessToken()
+    await request(await setupApp())
+    .get(`/api/surveys/${response.insertedId.toString()}/results`)
+    .set('x-access-token', accessToken)
     .expect(200)
   })
 })
